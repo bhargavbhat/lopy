@@ -1,0 +1,11 @@
+***Application Creation Steps***
+- Application must be created before adding devices (end nodes)
+- Open Applications [page](https://console.thethingsnetwork.org/applications) in TTN Console
+- Click "add application"
+- Enter following values for the corresponding fields:
+    - "Application ID" : A string of numerical characters eg: 1239142631023
+    - "Description" : Meaningful text
+    - "Application EUI" and "Handler registration" : leave as is
+- Click "Add Application"
+- "APPLICATIONS" screen will be displayed
+- Devices (end nodes) can now be added from the "APPLICATIONS" screen
