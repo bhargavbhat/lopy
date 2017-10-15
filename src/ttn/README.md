@@ -18,6 +18,7 @@
     - In TTN Console:
         - check Application -> Devices -> Overview -> "Last Seen" it will be "now" or "xx seconds ago"
         - check Application -> Devices -> Data -> will show exchange of packets
+        - *Note For ABP Only:* in case packets show up in gateway traffic but not in application, reset the frame counters. See [this](https://www.thethingsnetwork.org/forum/t/reset-frame-counter-issue/5169) for details 
 
 - End Node Flash Steps (OTAA Method)
     - TODO
