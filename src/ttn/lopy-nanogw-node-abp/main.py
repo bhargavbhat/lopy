@@ -1,4 +1,5 @@
 from network import LoRa
+from network import WLAN
 import socket
 import binascii
 import struct
@@ -7,6 +8,11 @@ import time
 # Configuration for India
 LORA_FREQUENCY = 866000000
 LORA_NODE_DR = 5
+
+# Turn off WiFi see also https://forum.pycom.io/topic/156/disable-wifi-for-low-power-operation
+wlan = WLAN()
+wlan.deinit()
+print('WiFi OFF')
 
 # initialize LoRa in LORAWAN mode.
 lora = LoRa(mode=LoRa.LORAWAN)
