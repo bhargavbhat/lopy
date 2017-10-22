@@ -18,7 +18,10 @@
     - In TTN Console:
         - check Application -> Devices -> Overview -> "Last Seen" it will be "now" or "xx seconds ago"
         - check Application -> Devices -> Data -> will show exchange of packets
-        - *Note For ABP Only:* in case packets show up in gateway traffic but not in application, reset the frame counters. See [this](https://www.thethingsnetwork.org/forum/t/reset-frame-counter-issue/5169) for details 
+        - *Note For ABP Only:* in case packets show up in gateway traffic but not in application:
+            - manually reset the frame counters. See [this](https://www.thethingsnetwork.org/forum/t/reset-frame-counter-issue/5169) for details
+            - in Application -> Devices -> Settings *UNCHECK* the box "Frame Counter Checks"
+        
 
 - End Node Flash Steps (OTAA Method)
     - Add Device to TTN (same as ABP Method above)
@@ -32,3 +35,4 @@
                 - Gateway code has the fix for [this](https://forum.pycom.io/topic/1330/lopy-lorawan-gateway-with-an-st-lorawan-device/2) issue
                 - Port Forwarding enabled for UDP Port 1700 from Public Internet to LoPy Nano-Gateway device (again UDP Port 1700)
         - check Application -> Devices -> Data -> will show exchange of packets
+        - in case of OTAA fiddling with frame counters is not required even after end-node reboots
