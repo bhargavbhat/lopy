@@ -8,6 +8,7 @@ import uos
 import usocket
 import utime
 import _thread
+import time
 from micropython import const
 from network import LoRa
 from network import WLAN
@@ -244,7 +245,9 @@ class NanoGateway:
             self.rxok += 1
             rx_data = self.lora_sock.recv(256)
             stats = lora.stats()
-            packet = self._make_node_packet(rx_data, self.rtc.now(), stats.rx_timestamp, stats.sfrx, self.bw, stats.rssi, stats.snr)
+            # TTN Join Fix as per: https://forum.pycom.io/topic/1330/lopy-lorawan-gateway-with-an-st-lorawan-device/2
+            # packet = self._make_node_packet(rx_data, self.rtc.now(), stats.rx_timestamp, stats.sfrx, self.bw, stats.rssi, stats.snr)
+            packet = self._push_data(self._make_node_packet(rx_data, self.rtc.now(), time.ticks_us(), stats.sfrx, self.bw, stats.rssi, stats.snr))
             self._push_data(packet)
             self._log('Received packet: {}', packet)
             self.rxfw += 1
