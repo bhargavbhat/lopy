@@ -1,5 +1,7 @@
 ### TTN Connectivity
-- To connect to TTN, register an account first. 
+- To connect to TTN, register an account first.
+- To check current [status](https://status.thethings.network/) of TTN
+
 - Gateway Flash Steps
     - Sync one LoPy as Nano-gateway "src/ttn/lopy-nanogw", note the Gateway ID
     - Add Gateway to TTN with displayed Gateway ID. See [here](./ttn_config/00gw.md)
